@@ -1,7 +1,7 @@
 <?php
 //require_once('reserva.php');
 
-$jsonurl = "http://localhost/test/booking/draft/booking.php";
+$jsonurl = "http://localhost/test/bookingdraft/booking.php";
 $json = file_get_contents($jsonurl,0,null,null);
 $json_output = json_decode($json, true);
 

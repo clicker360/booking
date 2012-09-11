@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<booking>
+	<general>
+		<name>Dummy Campaign</name>
+		<available>
+			<start>20120910090000</start>
+			<end>20120910140000</end>
+		</available>
+		<available>
+			<start>20120910150000</start>
+			<end>20120910210000</end>
+		</available>
+	</general>
+	
+	<event>
+		<duration>00001500</duration>
+		<span>
+			<start>20120915090000</start>
+			<end>20120915140000</end>
+		</span>
+		<span>
+			<start>20120915150000</start>
+			<end>20120915190000</end>
+		</span>
+	</event>
+	
+	<db host="localhost" user="dummy" password="dummy" name="dummy">
+		<table>
+			<email type="varchar" />
+			<nombre type="varchar" />
+			<tel type="varchar" />
+			<regdate type="regdate" />
+		</table>
+	</db>
+</booking>

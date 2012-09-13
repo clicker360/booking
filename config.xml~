@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <booking>
 	<general>
-		<name>DummyCampaign</name>
+		<name>Dummy Campaign</name>
 		<available>
 			<start>20120910090000</start>
 			<end>20120910140000</end>
@@ -14,6 +14,7 @@
 	
 	<event>
 		<duration>00001500</duration>
+		<split>100</split>
 		<span>
 			<start>20120915090000</start>
 			<end>20120915140000</end>

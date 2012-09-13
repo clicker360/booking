@@ -42,24 +42,36 @@ value varchar(255) NULL,
 PRIMARY KEY(id)
 );";
 
+
+$campaign_sql = "INSERT INTO booking_config VALUES('','campaign','" . $campaign . "');";
 //Write config
 /*
 $conn = mysql_connect($dbhost, $dbuser, $dbpasswd) or die(mysql_error());
 mysql_query($createdb_sql);
 mysql_select_db($db, $conn) or die(mysql_error());
-$campaign_sql = "INSERT INTO booking_config VALUES('','campaign','" . $campaign . "')";
 mysql_query($dropconfig_sql);
 mysql_query($createconfig_sql);
 mysql_query($campaign_sql);
 */
-echo "In MySQL:<br /><br />\n<xmp>" . $createdb_sql . "</xmp><xmp>" . $createconfig_sql . "</xmp>\n";
+echo "In MySQL:<br /><br />\n<xmp>" . $createdb_sql . "\nuse " . $db . "</xmp><xmp>" . $createconfig_sql . "</xmp>\n";
+echo "<xmp>" . $campaign_sql . "</xmp>";
 echo "<xmp>";
 foreach($configxml->general->available as $available){
 	$available_sql = "INSERT INTO booking_config VALUES('','available','" . $available->start . "-" . $available->end . "');";
 	//mysql_query($available_sql);
-	echo $available_sql;
+	echo $available_sql . "\n";
 }
 echo "</xmp>";
+
+foreach($configxml->event as $event){
+	$duration = $event->duration;
+	$split = $event->split;
+	foreach($event->span as $span){
+		$start = $span->start;
+		$end = $span->end;
+		echo $start . " - " . $end;
+	}
+}
 
 //mysql_close();
 ?>
